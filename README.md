@@ -7,7 +7,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 * Git
 * Node.js
 * NPM ou Yarn
-
+```
 ## Como rodar o projeto
 
 # Clone este repositório
@@ -22,6 +22,7 @@ $ npm install
 # Execute a aplicação
 $ npm start
 
- O servidor inciará na porta:3000 - acesse <http://localhost:3000>
+ # O servidor iniciará na porta:3000 - acesse <http://localhost:3000>
+```
 
 Agora você pode usar a API para estudar e experimentar com Node.js e Express.js!
