@@ -6,6 +6,7 @@ class StartUp {
     constructor() {
         this.app = express();
         this.middleware();
+        this.routes();
     }
     middleware(): void {
         this.app.use(bodyParser.json());
