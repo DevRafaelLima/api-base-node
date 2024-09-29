@@ -1,6 +1,7 @@
 import express, { NextFunction, Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import Database from './infra/db';
+import * as DBMySQL from './infra/dbMysql';
 
 // controllers
 import PermissionController from './controllers/PermissionController';
@@ -16,7 +17,7 @@ class StartUp {
         this.middleware();
         this._db.createConnection();
         this.routes();
-
+        DBMySQL.authenticate();
     }
     middleware(): void {
         this.app.use(bodyParser.json());
