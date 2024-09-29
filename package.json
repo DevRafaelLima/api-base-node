@@ -1,12 +1,13 @@
 {
-  "name": "api-base-node",
+  "name": "api-prime-burguer",
   "version": "1.0.0",
-  "description": "This project is a node base api so you can use it with for other projects.",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node src/server.ts",
-    "dev": "nodemon --exec ts-node src/server.ts"
+    "dev": "nodemon --exec ts-node src/server.ts",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -21,14 +22,19 @@
   "homepage": "https://github.com/DevRafaelLima/api-base-node#readme",
   "devDependencies": {
     "@types/express": "^4.17.21",
+    "@types/mongoose": "^5.11.97",
     "@types/node": "^20.12.7",
+    "@types/sequelize": "^4.28.20",
     "nodemon": "^3.1.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.4.5"
+    "typescript": "^5.6.2"
   },
   "dependencies": {
     "body-parser": "^1.20.2",
     "dotenv": "^16.4.5",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "mongoose": "^8.5.1",
+    "mysql2": "^3.11.3",
+    "sequelize": "^6.37.3"
   }
 }

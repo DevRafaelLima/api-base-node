@@ -1,0 +1,15 @@
+{
+    "name": "Lilian Monteiro",
+    "dob":null,
+    "phone": "+55 91 8105-5671",
+    "cpf": null,
+    "address": [
+        {
+            "city": "Breves-pa",
+            "road": "Av. Bagre",
+            "neighborhood": null,
+            "numero": 884
+        }
+    ],
+    "orders": []
+}
