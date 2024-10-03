@@ -4,11 +4,8 @@ import Database from './infra/db';
 import * as DBMySQL from './infra/dbMysql';
 
 // controllers
-import PermissionController from './controllers/PermissionController';
-import UserController from './controllers/UserController';
-import ClientController from './controllers/ClientController';
-import ProductController from './controllers/ProductController';
-import OrderController from './controllers/OrderController';
+import PaymentMethodController from './controllers/PaymentMethodController';
+import CityController from './controllers/CityController';
 class StartUp {
     public app: express.Application;
     private _db: Database = new Database();
@@ -32,34 +29,20 @@ class StartUp {
             res.send({ version: '0.0.1' });
         });  
 
-        // Permissions
-        this.app.route('/api/v1/permission/:id').get((req: Request, res: Response) => {
-            return PermissionController.getById(req, res);
+        // PaymentMethod
+        this.app.route('/api/v1/paymentMethod').get((req: Request, res: Response) => {
+            return PaymentMethodController.selectAll(req, res);
         });
-        this.app.route('/api/v1/permission').post((req: Request, res: Response)=> {
-            return PermissionController.create(req, res);
-        });  
-
-        // users
-        this.app.route('/api/v1/user').post((req: Request, res: Response) => {
-            return UserController.create(req, res);
+        this.app.route('/api/v1/paymentMethod').post((req: Request, res: Response) => {
+            return PaymentMethodController.create(req, res);
+        });
+        this.app.route('/api/v1/paymentMethod/:id').delete((req: Request, res: Response) => {
+            return PaymentMethodController.delete(req, res);
         });
 
-        // clients
-        this.app.route('/api/v1/client').post((req: Request, res: Response) => {
-            return ClientController.create(req, res);
-        });
-
-
-        // Products
-        this.app.route('/api/v1/product').post((req: Request, res: Response) => {
-            return ProductController.create(req, res);
-        });
-
-
-        // order
-        this.app.route('/api/v1/order').post((req: Request, res: Response) => {
-            return OrderController.create(req, res);
+        // City
+        this.app.route('/api/v1/city').get((req: Request, res: Response) => {
+            return CityController.index(req, res);
         });
     }
 }

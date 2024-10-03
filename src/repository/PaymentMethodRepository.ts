@@ -1,5 +1,5 @@
 import PaymentMethodModel from "../models/PaymentMethodModel";
-
+import TPaymentMethod from "../types/paymentMethod/TPayment";
 
 class PaymentMethodRepository {
     async findAll() {
@@ -10,13 +10,14 @@ class PaymentMethodRepository {
         return await PaymentMethodModel.findByPk(id);
     }
 
-    async create(name: string) {
-        return await PaymentMethodModel.create({ name });
+    async create(paymentMethod: Omit<TPaymentMethod, 'id'>) {
+        return await PaymentMethodModel.create(paymentMethod);
     }
 
-    async update(id: number, name: string) {
+    async update(paymentMethod: TPaymentMethod) {
+        const { id, name } = paymentMethod;
         return await PaymentMethodModel.update({ name }, { where: { id } });
     }
 }
 
-export default new PaymentMethodRepository();
+export default PaymentMethodRepository;
