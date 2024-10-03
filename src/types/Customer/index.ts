@@ -6,7 +6,7 @@ type TCustomer = {
     email: string;
     phone: string;
     whatsapp: boolean;
-    db: string;
+    dob: string;
     address: TAddress[] | null
 }
 
