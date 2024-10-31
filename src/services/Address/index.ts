@@ -4,11 +4,11 @@ import TAddress from '../../types/Address';
 import IAddressService from './interface';
 
 class AddressService implements IAddressService {
-    private addressModel: AddressModel;
+  private addressModel: AddressModel;
 
-    constructor() {
-        this.addressModel = new AddressModel();
-    }
+  constructor() {
+    this.addressModel = new AddressModel();
+  }
 
   async selectAll(): Promise<TAddress[]> {
     const data = await this.addressModel.selectAll();

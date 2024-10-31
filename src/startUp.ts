@@ -7,6 +7,7 @@ import * as DBMySQL from './infra/dbMysql';
 import PaymentMethodController from './controllers/PaymentMethodController';
 import CityController from './controllers/CityController';
 import AddressController from './controllers/AddressController';
+import CustomerController from './controllers/CustomerController';
 class StartUp {
     public app: express.Application;
     private _db: Database = new Database();
@@ -49,6 +50,11 @@ class StartUp {
         // address
         this.app.route('/api/v1/address').get((req: Request, res: Response) => {
             return AddressController.index(req, res);
+        });
+
+        // customer
+        this.app.route('/api/v1/customer').get((req: Request, res: Response) => {
+            return CustomerController.index(req, res);
         });
     }
 }
